@@ -43,7 +43,7 @@
         android:entries="@array/arr_jenis_pendaftaran"/>
 
     <CheckBox
-        android:id="@+id/cb_konfirmasi_daftar"
+        android:id="@+id/cbx_konfirmasi_daftar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Konfirmasi Pendaftaran"
@@ -56,6 +56,6 @@
         android:layout_height="wrap_content"
         android:text="daftar"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/cb_konfirmasi_daftar" />
+        android:layout_below="@+id/cbx_konfirmasi_daftar" />
 
 </RelativeLayout>
