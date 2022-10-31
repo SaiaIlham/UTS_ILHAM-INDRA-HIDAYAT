@@ -8,30 +8,30 @@
     tools:context=".SecondActivity">
     
     <TextView
-        android:id="@+id/tv_konfirmasi"
+        android:id="@+id/tv_konfirmasi_daftar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Konfirnasi Pendaftaran"
+        android:text="Konfirmasi Pendaftaran"
         android:textSize="17sp"
         android:layout_marginTop="30dp"
         android:gravity="center" />
 
     <TextView
-        android:id="@+id/tv_nama"
+        android:id="@+id/tv_nama_pendaftar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nama"
         android:textStyle="bold"
-        android:layout_below="@id/tv_konfirmasi"
-        android:layout_marginTop="30dp" />
+        android:layout_below="@id/tv_konfirmasi_daftar"
+        android:layout_marinTop="30dp" />
 
     <TextView
-        android:id="@+id/tv_nomor"
+        android:id="@+id/tv_nomor_pendaftaran"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nama"
         android:textStyle="bold"
-        android:layout_below="@id/tv_nama"
+        android:layout_below="@id/tv_nama_pendaftar"
         android:layout_marginTop="30dp" />
 
 
