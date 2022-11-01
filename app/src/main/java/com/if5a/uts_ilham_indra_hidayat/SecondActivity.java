@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
-    EditText tv_nama,tv_nomor ;
+    TextView tv_nama,tv_nomor,tv_jalur ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,11 +19,12 @@ public class SecondActivity extends AppCompatActivity {
 
         tv_nama = findViewById(R.id.tv_nama);
         tv_nomor = findViewById(R.id.tv_nomor);
+        tv_jalur = findViewById(R.id.tv_jalur);
 
-        Intent terima = getIntent();
-        String yNama = terima.getStringExtra( "xNama");
-        String yNomor = terima.getStringExtra( "xNomor");
-        tv_nama.setText(yNama);
-        tv_nomor.setText(yNomor);
+
+        Intent intent = getIntent();
+        tv_nama.setText(intent.getStringExtra("xNama"));
+        tv_nomor.setText(intent.getStringExtra("xNomor"));
+        tv_jalur.setText(intent.getStringExtra("xJalur"));
     }
 }

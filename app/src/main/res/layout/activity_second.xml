@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,23 +17,30 @@
         android:gravity="center" />
 
     <TextView
-        android:id="@+id/tv_nama_pendaftar"
+        android:id="@+id/tv_nama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nama"
+        android:text="ilham"
         android:textStyle="bold"
-        android:layout_below="@id/tv_konfirmasi_daftar"
-        android:layout_marinTop="30dp" />
+        android:layout_below="@id/tv_konfirmasi_daftar"/>
 
     <TextView
-        android:id="@+id/tv_nomor_pendaftaran"
+        android:id="@+id/tv_nomor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nama"
+        android:text="Nomor"
         android:textStyle="bold"
-        android:layout_below="@id/tv_nama_pendaftar"
-        android:layout_marginTop="30dp" />
+        android:layout_below="@id/tv_nama"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/tv_jalur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Jalur"
+        android:textStyle="bold"
+        android:layout_below="@id/tv_nomor"
+        android:layout_marginTop="30dp"/>
 
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

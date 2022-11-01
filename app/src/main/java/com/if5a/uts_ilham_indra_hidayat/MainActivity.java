@@ -10,13 +10,13 @@ import android.widget.CheckBox;
 import android.widget.Checkable;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    Button btndaftar;
-    EditText etNamalengkap, etnomorpendaftaran;
-    String nomorpendaftaran, namalengkap;
-    Spinner spjalurpendaftaran;
-    CheckBox cbxkonfirmasidaftar;
+    Button btn_daftar;
+    EditText et_nama_lengkap, et_nomor_pendaftaran;
+    Spinner sp_jalur_pendaftaran;
+    CheckBox cbx_konfirmasi_daftar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,28 +24,36 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         getSupportActionBar().setTitle("UTS Ilham Indra Hidayat");
-        btndaftar = findViewById(R.id.btn_daftar);
-        etNamalengkap = findViewById(R.id.et_nama_lengkap);
-        etnomorpendaftaran = findViewById(R.id.et_nomor_pendaftaran);
-        spjalurpendaftaran = findViewById(R.id.sp_jalur_pendaftaran);
-        cbxkonfirmasidaftar = findViewById(R.id.cbx_konfirmasi_daftar);
+        btn_daftar = findViewById(R.id.btn_daftar);
+        et_nama_lengkap = findViewById(R.id.et_nama_lengkap);
+        et_nomor_pendaftaran = findViewById(R.id.et_nomor_pendaftaran);
+        sp_jalur_pendaftaran = findViewById(R.id.sp_jalur_pendaftaran);
+        cbx_konfirmasi_daftar = findViewById(R.id.cbx_konfirmasi_daftar);
 
-        btndaftar.setOnClickListener(new View.OnClickListener() {
+        btn_daftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                namalengkap = etNamalengkap.getText().toString();
-                nomorpendaftaran = etnomorpendaftaran.getText().toString();
+                String namalengkap,nomorpendaftaran,jalurpendaftaran;
+
+                namalengkap = et_nama_lengkap.getText().toString();
+                nomorpendaftaran = et_nomor_pendaftaran.getText().toString();
+                jalurpendaftaran = sp_jalur_pendaftaran.getSelectedItem().toString();
 
                     if (namalengkap.trim().equals("")){
-                        etNamalengkap.setError("Nama Harus Diisi");
+                        et_nama_lengkap.setError("Nama Harus Diisi");
                     }
                     else if (nomorpendaftaran.trim().equals("")){
-                        etnomorpendaftaran.setError("Nomor Pendaftaran Harus Diisi");
+                        et_nomor_pendaftaran.setError("Nomor Pendaftaran Harus Diisi");
+                    }
+                    else if(!cbx_konfirmasi_daftar.isChecked()){
+                        Toast.makeText(MainActivity.this,"Checkbox Harus Diisi",Toast.LENGTH_SHORT).show();
                     }
                     else {
-                        Intent daftar = new Intent(MainActivity.this,SecondActivity.class);
-                        daftar.putExtra( "xNama", namalengkap);
-                        startActivity(daftar);
+                        Intent intent = new Intent(MainActivity.this,SecondActivity.class);
+                        intent.putExtra( "xNama", namalengkap);
+                        intent.putExtra("xNomor",nomorpendaftaran);
+                        intent.putExtra("xJalur",jalurpendaftaran);
+                        startActivity(intent);
                     }
 
             }
